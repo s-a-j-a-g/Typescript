@@ -1,5 +1,6 @@
 import fs from "fs";
 import makeDirectory from "./utils/makeDirectory.js";
+import generateRandomNumber from "./utils/generateRandomNumber.js";
 const travelagencies = require("./travelagencies.json");
 
 const filePath: string = "assets/newTravelAgencies.json";
@@ -10,7 +11,7 @@ const prefixes = ["10", "96", null];
 //   return randomIndex;
 // };
 const newTravelAgencies = travelagencies.map((travelAgency) => {
-  const index = generateRandomIndex(prefixes.length);
+  const index = generateRandomNumber(prefixes.length);
 
   if (prefixes[index] !== null) {
     console.log(prefixes[index]);
